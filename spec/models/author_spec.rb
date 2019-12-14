@@ -18,7 +18,7 @@ describe Author do
       book_3 = create(:book, pages: 350)
       author.books << [book_1, book_2, book_3]
 
-      expect(author.average_page_count).to_be between(483, 484)
+      expect(author.average_page_count).to be_between(483, 484)
     end
   end
 end
