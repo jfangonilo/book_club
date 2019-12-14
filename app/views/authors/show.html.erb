@@ -1,5 +1,5 @@
-<%= @author.name %>
+<h2><%= @author.name %></h2>
 <% @author.books.each do |book| %>
-  <%= book.title %>
+  <p><%= book.title %></p>
 <% end %>
-<%= @author.average_page_count %>
+<p><%= @author.average_page_count.round(2) %></p>
