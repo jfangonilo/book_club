@@ -37,4 +37,18 @@ describe "books index page" do
       expect(page).to have_content author_2.name
     end
   end
+
+  it "has links to the author of each book" do
+    book = create(:book)
+    author = create(:author)
+
+    book.authors << author
+
+    visit "/books"
+    within "#book-#{book.id}" do
+      click_link author.name
+    end
+
+    expect(current_path).to eq "/authors/#{author.id}"
+  end
 end
