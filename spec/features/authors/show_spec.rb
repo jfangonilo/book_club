@@ -8,9 +8,9 @@ describe "author show page" do
 
     visit "/authors/#{author.id}"
     expect(page).to have_content author.name
-    expect(page).to have_content book_1.name
-    expect(page).to have_content book_2.name
-    expect(page).to have_content book_3.name
+    expect(page).to have_content books[0].title
+    expect(page).to have_content books[1].title
+    expect(page).to have_content books[2].title
     expect(page).to have_content author.average_page_count
   end
 end
